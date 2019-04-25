@@ -1,0 +1,150 @@
+.row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.row-title {
+  flex: 1;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.row-extra {
+  flex-basis: initial;
+  font-size: 32rpx;
+  color: #888;
+}
+
+.row-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+
+.page {
+  min-height: 100%;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.important {
+  position: relative;
+}
+
+.important::after{
+  content: '*';
+  position: absolute;
+  color: red;
+  left: 14rpx;
+}
+
+.important-new {
+  position: relative;
+}
+
+.important-new::after{
+  content: '*';
+  position: absolute;
+  color: red;
+  left: -17rpx;
+}
+
+.am-input-label {
+  font-weight: bold;
+}
+
+.page-section-title {
+  font-weight: bold;
+}
+
+.row-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.row-extra {
+  font-size: 12px;
+}
+
+.am-input-content {
+  font-size: 13px;
+}
+
+.button-form {
+  font-size: 17px;
+  height: 44px;
+  line-height: 44px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.picture-btns {
+  height: 40px;
+  line-height: 40px;
+  color: rgba(50, 150, 250, 1);
+  font-size: 14px;
+  text-align: center;
+}
+
+.picture-btns .details {
+  font-weight: normal;
+  font-size: 12px;
+  color: #888;
+  margin-left: 7px;
+}
+
+.am-input-line-bottom {
+  display: none;
+}
+
+/* .page-section-btns {
+  border-top: none;
+} */
+
+/* 批量添加组件 */
+.select-section {
+  padding: 0 30rpx;
+}
+
+.select-section .title {
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+.select-section .title .details {
+  font-weight: normal;
+  font-size: 12px;
+  color: #888;
+  margin-left: 7px;
+}
+
+.add-wrapper {
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+  margin:0 14px 14px 0;
+}
+
+.add-wrapper .add {
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  background: #eee;
+  display: inline-block;
+  line-height: 37px;
+  text-align: center;
+  font-size: 37px;
+  color: #999;
+  vertical-align: bottom;
+}
+
+.add-wrapper .name {
+  margin-top: 4px;
+  display: inline-block;
+  font-size: 13px;
+  color: #888;
+}

@@ -1,0 +1,116 @@
+.chart {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 200px;
+  box-shadow: 0 0 2px #ccc;
+  border-radius: 4px;
+}
+
+.list {
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-shadow: 0 0 2px #ccc; 
+  margin: 0 10px 0;
+}
+
+.list-header {
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+}
+
+.list-header text {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 30px;
+  position: relative;
+}
+
+.list-header::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-header text::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  background: url("/image/database.png") 100%/100%;
+}
+
+/* 列表样式复写 */
+.list-item {
+  position: relative;
+}
+
+.list-item::after {
+  content: "";
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.am-list-line-bottom {
+  display: none;
+}
+
+.am-list-extra {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+}
+
+.am-list-thumb {
+  border-radius: 50%;
+}
+
+.am-list-content {
+
+}
+/* 列表样式复写完成 */
+
+.list-item .name {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.brief-title {
+  font-size: 13px;
+}
+
+.brief-content {
+  margin-top: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.brief-image {
+  display: inline-block;
+  /* height: 100px; */
+  width: 100px;
+  margin-right: 23px;
+  /* margin-bottom: 14px; */
+}
+
+.brief-time {
+  /* margin-top: 10px; */
+  font-size: 12px;
+  color: #777;
+}
+
+.extra {
+  color: #46adf4;
+  font-weight: bold;
+  font-size: 13px;
+}

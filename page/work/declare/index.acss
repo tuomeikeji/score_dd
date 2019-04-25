@@ -1,0 +1,134 @@
+.page {
+  /* padding: 0; */
+  padding-bottom: 10px;
+}
+
+/* .am-search-back {
+  display: none;
+} */
+
+.tabs {
+  /* margin: 0 10px 0; */
+}
+
+.am-tabs-bar {
+  height: 40px;
+}
+
+.am-tabs-bar-content-fixed {
+  height: 40px;
+}
+
+.am-tabs-bar-tab {
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.page-section-demo {
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 19;
+}
+
+.search-outer {
+  box-sizing: border-box;
+  display:flex;
+  height:40px;
+  overflow:hidden;
+  padding: 10px 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #efeff4;
+}
+
+.search-outer * {
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex:1;
+  text-align: left;
+  display: block;
+  color: #000;
+  height: 24px;
+  font-size: 15px;
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.focus.search-cancel {
+  margin-right: 0;
+  opacity: 1;
+}
+
+.search-cancel {
+  margin-right:-40px;
+  display: inline-block;
+  opacity: 0;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #108ee9;
+  text-align: right;
+  transition: margin-right .3s,opacity .3s;
+  transition-delay: .1s;
+}
+
+.list {
+  background: #F7F7F7;
+  margin: 0 10px 0;
+}
+
+.list-item {
+  background: #fff;
+  box-shadow: 0 0 2px #ccc;
+  margin-top: 10px;
+}
+
+.list-item .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list-item .brief-content {
+  font-size: 12px;
+}
+
+.list-item .brief-bottom {
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+.brief-bottom-left .points {
+  color: #46adf4;
+}
+
+.brief-bottom-right {
+  float: right;
+  color: #999;
+}
+
+.true {
+  background: #555;
+  position: relative;
+  border-radius: 2px;
+}
+
+.true .brief-bottom-left .points {
+  color: #000;
+}
+
+.true .brief-bottom-right {
+  color: #000;
+}
+
+.true:active::after {
+  content: '您今天已经申请过此条目了，如需再次申请请撤销上次申请';
+  color: #46adf4;
+  font-size: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

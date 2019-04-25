@@ -1,0 +1,39 @@
+<view class="page" style="height: {{windowHeight - bottomHeight}}px">
+  <top />
+  <view class="content">
+    <text class="content-left">
+      <image src="/image/left.png" />
+      可用积分： 
+      <text class="points">{{data}}</text>
+    </text>
+    <text class="content-right" onTap="logs"><image src="/image/right.png" />兑换记录</text>
+  </view>
+  <view class="title">
+    <view class="title-up">他们都在兑</view>
+    <view class="title-dwon">每个职位兑换积分不一样哦</view>
+  </view>
+  <view class="main">
+    <view a:for="{{items}}" class="item" style="width: {{width}};display: inline-block">
+      <image src="{{item.goodImg}}" class="item-picture" style="width: {{width}};height: {{width}}" mode="aspectFill" onTap="toDetails" data-item="{{item}}"></image>
+      <view class="item-title">{{item.goodName}}</view>
+      <view class="item-bottom">
+        <text class="item-bottom-left"><text class="price">{{item.dhIntegral}}</text>积分</text>
+        <text class="item-bottom-right {{item.active ? 'out' : ''}}" onTap="change" data-item="{{item}}">兑换</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bottom {{goods.length>0 ? 'show' : ''}}" id="bottom">
+  <view class="bottom-main">
+    <view class="left">
+      <text class="bottom-title">您购买了：</text>
+    </view>
+    <view class="bottom-content">
+      <text class="good" a:for="{{goods}}" onTap="delete" data-id="{{item.goodId}}">{{item.goodName}}</text>
+      <text class="total">总共<text class="price">{{sum}}</text>积分</text>
+    </view>
+  </view>
+  <view class="right" onTap="confirm">
+    确定购买
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "工作台",
+  "usingComponents": {
+    "grid": "mini-ddui/es/grid/index",
+    "top": "/components/top/index"
+  }
+}

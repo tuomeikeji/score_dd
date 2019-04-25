@@ -1,0 +1,96 @@
+<view class="page">
+  <form onSubmit="formSubmit" class="page-section">
+    <view class="page-section-title important">任务目标
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="必填" name="title" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.title}}" />
+    </view>
+    <view class="form-line" />
+    <view class="page-section-title important">任务内容
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="必填" name="content" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.content}}" />
+    </view>
+    <view class="form-line" />
+    <picker onChange="changeTypes" value="{{arrIndexType}}" range="{{types}}" range-key="typeName" name="types">
+      <view class="row">
+        <view class="row-title">积分类型
+        </view>
+        <view class="row-extra">当前选择：{{types[arrIndexType].typeName}}                
+        </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <view class="page-section-title">备注</view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="输入备注信息" name="textarea" style="font-size: 13px" />
+    </view>
+    <!-- <view class="form-line" />
+    <view class="picture-btns">
+      <view onTap="datePicker1">选择开始日期
+        <text class="details">{{date1}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <view class="picture-btns">
+      <view onTap="datePicker2">选择结束日期
+        <text class="details">{{date2}}</text>
+      </view>
+    </view> -->
+    <!-- <view class="form-line" />
+    <input-item
+      className="input-text important"
+      type="digit"
+      name="count"
+      placeholder="0"
+    >
+      输入限制人数
+    </input-item> -->
+    <view class="form-line" />
+    <picker onChange="changePoints" value="{{arrIndexPoints}}" range="{{pointsArray}}" name="points" >
+      <view class="row important">
+        <view class="row-title">奖励积分<text>（可用积分 {{data}}）</text>
+        </view>
+        <view class="row-extra">当前选择：{{pointsArray[arrIndexPoints]}}
+        </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <button type="default" plain onTap="showSelect" hover-class="none" class="range-select">选择范围<text class="right-arrow"></text></button>
+    <view class="form-line" />
+    <button formType="submit" type="primary" loading="{{loading}}" class="button-form">提交</button>
+  </form>
+</view>
+<view class="filter {{showFilter ? 'show-filter' : ''}}">
+  <!-- <button type="default" plain hover-class="none" class="top-button" onTap="back">点击这里返回</button> -->
+  <view>
+    <form onSubmit="onSubmit" onReset="onReset" class="filter-form">
+    <tabs
+      tabs="{{tabsFilter}}"
+      fixed="{{true}}"
+      onTabClick="handleTabFilterClick"
+      onChange="handleTabFilterChange"
+    >
+      <block a:for="{{tabsFilter}}">
+        <tab-content key="{{index}}">
+          <view class="tab-content">
+            <checkbox-group class="radio-group" onChange="radioChange" name="tags{{index}}" style="height: {{height}}px">
+              <label class="radio" a:for="{{item.tags}}" key="label-{{index}}">
+                <checkbox value="{{item.deptId ? item.deptId : item.roleId}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+                <text class="radio-text">{{item.deptName ? item.deptName : item.roleName}}</text>
+              </label>
+            </checkbox-group>
+          </view>
+        </tab-content>
+      </block>
+    </tabs>
+    <view class="page-section-btns">
+      <!-- <view><button size="mini" type="ghost" formType="reset">重置</button></view> -->
+      <view><button size="mini" type="ghost" onTap="back">返回</button></view>
+      <view><button size="mini" type="primary" formType="submit">确定</button></view>
+    </view>
+    </form>
+  </view>
+</view>

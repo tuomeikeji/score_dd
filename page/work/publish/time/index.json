@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "限时任务",
+  "usingComponents":{
+    "input-item":"mini-ddui/es/input-item/index",
+    "tabs":"mini-ddui/es/tabs/index",
+    "tab-content": "mini-ddui/es/tabs/tab-content/index"
+  }
+}

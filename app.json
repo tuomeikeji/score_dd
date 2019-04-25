@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "page/register/index/index",
+    "page/index/index",
+    "page/home/index/index",
+    "page/work/index/index",
+    "page/rank/index/index",
+    "page/rank/index/details/index",
+    "page/personal/index/index",
+
+    "page/work/declare/index",
+    "page/work/market/index",
+    "page/work/market/details/index",
+    "page/work/market/logs/index",
+    "page/work/market/success/index",
+    "page/work/award/index",
+    "page/work/declare/approve/index",
+    "page/work/praise/index",
+    "page/work/take/index",
+    "page/work/like/index",
+    "page/work/bounty/index",
+    "page/work/bounty/commit/index",
+    "page/work/publish/index",
+    "page/work/publish/rush/index",
+    "page/work/publish/time/index",
+    "page/work/publish/daily/index",
+    "page/work/callto/index",
+    "page/work/callto/reapprove/index",
+
+    "page/work/index/logs/index",
+    "page/work/index/wait/index",
+    "page/work/index/from/index",
+    "page/work/index/to/index",
+    "page/work/index/logs/details/index",
+    "page/work/index/wait/details/index",
+    "page/work/index/from/details/index",
+    "page/work/index/to/details/index"
+  ],
+  "window": {
+    "enableWK": "YES",
+    "enableDSL": true,
+    "defaultTitle": "积分平台",
+    "backgroundColor": "#F5F5F9",
+    "pullRefresh": false,
+    "allowsBounceVertical": true
+  },
+  "tabBar": {
+    "textColor": "#404040",
+    "selectedColor": "#108ee9",
+    "backgroundColor": "#F5F5F9",
+    "items": [
+      {
+        "pagePath": "page/home/index/index",
+        "name": "首页",
+        "icon": "image/home.png",
+        "activeIcon": "image/home-active.png"
+      },
+      {
+        "pagePath": "page/work/index/index",
+        "name": "工作台",
+        "icon": "image/briefcase.png",
+        "activeIcon": "image/briefcase-active.png"
+      },
+      {
+        "pagePath": "page/rank/index/index",
+        "name": "积分榜",
+        "icon": "image/stats-bars.png",
+        "activeIcon": "image/stats-bars-active.png"
+      },
+      {
+        "pagePath": "page/personal/index/index",
+        "name": "个人中心",
+        "icon": "image/user.png",
+        "activeIcon": "image/user-active.png"
+      }
+    ]
+  },
+  "debug": true
+}

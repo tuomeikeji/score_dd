@@ -1,0 +1,5 @@
+Page({
+  onButtonTap() {
+    dd.navigateBack();
+  }
+})

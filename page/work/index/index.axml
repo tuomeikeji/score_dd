@@ -1,0 +1,35 @@
+<view class="page">
+  <top />
+  <view class="content">
+    <view class="content-title">管理日志</view>
+    <view class="content-list">
+      <view class="number">
+        <text class="number-amount" onTap="logs">{{data.counNum ? data.counNum : '-'}}</text>
+        <text class="number-text">申请日志</text>
+      </view>
+      <view class="number">
+        <text class="number-amount" onTap="wait">{{data.dwsp ? data.dwsp : '-'}}</text>
+        <text class="number-text">待我审批</text>
+      </view>
+      <view class="number">
+        <text class="number-amount" onTap="initiate">{{data.counNum1 ? data.counNum1 : '-'}}</text>
+        <text class="number-text">我发起的</text>
+      </view>
+      <view class="number">
+        <text class="number-amount" onTap="copy">{{data.csrs ? data.csrs : '-'}}</text>
+        <text class="number-text">抄送我的</text>
+      </view>
+    </view>
+  </view>
+  <view class="content" hidden="{{hidden}}">
+    <view class="content-title">管理应用</view>
+    <grid class="content-grid" columnNum="{{4}}" list="{{listContent}}" onGridItemClick="onContentClick" hasLine="{{true}}"></grid>
+  </view>
+  <view class="main">
+    <view class="main-title">日常积分
+      <view class="count" a:if="{{count > 0}}">{{count}}</view>
+    </view>
+    <grid class="main-grid" columnNum="{{4}}" list="{{listMain}}" onGridItemClick="onMainClick" hasLine="{{true}}">
+    </grid>
+  </view>
+</view>

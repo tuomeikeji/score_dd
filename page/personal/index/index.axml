@@ -1,0 +1,37 @@
+<view class="page" style="min-height: {{height}}px">
+  <view class="wrapper">
+  <card
+    thumb="{{data.avatar ? data.avatar : '/image/logo.png'}}"
+    title="{{data.name}}"
+    subTitle="{{data.deptName}} {{data.postName}}"
+    onClick="onCardClick"
+  >
+  <!-- <view class="am-card-footer">
+    <text>积分：{{data.amount}}</text>
+    <text style="margin-left: 34px;">基础积分：{{data.base}}</text>
+  </view> -->
+  </card>
+  <view class="am-card-footer">
+    <text>积分：{{data.amount}}</text>
+    <text style="margin-left: 34px;">基础积分：{{data.base}}</text>
+  </view>
+  <view class="chart">
+    <dd-charts canvasId="ddchart-canvas" onDraw="onDraw" />
+  </view>
+  <!-- <view class="content">
+    <view class="content-item" onTap="toFrame">
+      <text class="frame">企业组织架构</text>
+      <text class="right-arrow"></text>
+    </view>
+    <view class="content-item" onTap="toTask">
+      <text class="task">我的任务</text>
+      <text class="right-arrow"></text>
+    </view>
+    <view class="content-item" onTap="toDiary">
+      <text class="diary">我的日记</text>
+      <text class="right-arrow"></text>
+    </view>
+  </view>
+  </view> -->
+  <button type="default" plain hover-class="none" onTap="logout">退出登陆</button>
+</view>

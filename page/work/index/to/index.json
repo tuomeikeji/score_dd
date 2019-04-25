@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "抄送我的",
+  "usingComponents": {
+    "list": "mini-ddui/es/list/index",
+    "list-item": "mini-ddui/es/list/list-item/index",
+
+    "tabs": "mini-ddui/es/tabs/index",
+    "tab-content": "mini-ddui/es/tabs/tab-content/index"
+  }
+}

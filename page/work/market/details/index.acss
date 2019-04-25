@@ -1,0 +1,88 @@
+.content {
+  /* margin-top: 10px; */
+  /* box-shadow: 0 0 2px #ccc; */
+  background: #fff;
+  border-radius: 4px;
+  color: #444;
+}
+
+.content-item {
+  height: 40px;
+  font-size: 12px;
+  /* color: #444; */
+  font-family: Tahoma, Helvetica, Arial, "\\5B8B体", sans-serif;
+  line-height: 40px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 14px;
+}
+
+.content-item.people::after {
+  content: "";
+  width: 95%;
+  position: absolute;
+  left: calc(50% - 7px);
+  transform: translateX(-50%);
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-item .number {
+    margin-left: 4px;
+    color: #999;
+}
+
+.content .change {
+    text-align: center;
+    /* background: #ff862d; */
+    background: #46adf4;
+}
+
+.title {
+    padding-left: 10px;
+}
+
+.title .top {
+    line-height: 40px;
+    font-family: Tahoma, Helvetica, Arial, "\\5B8B体", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.title .top .leave {
+    float: right;
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+.title .bottom {
+    line-height: 34px;
+    font-family: Tahoma, Helvetica, Arial, "\\5B8B体", sans-serif;
+    font-size: 14px;
+    color: #ff862d;
+}
+
+.title .bottom .has {
+    float: right;
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.details-title {
+    font-size: 14px;
+    /* background: #fff; */
+    padding-left: 4px;
+    line-height: 23px;
+}

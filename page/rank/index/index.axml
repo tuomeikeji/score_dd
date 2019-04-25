@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="page-section-demo {{show ? 'search' : ''}}">
+    <view class="search-outer">
+      <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+      <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消      
+      </text>
+    </view>
+  </view> 
+  <view class="top">
+    <button type="default" size="mini" onTap="showSelect" class="select">筛选<text class="right-arrow"></text></button>
+    <view class="tabs">
+      <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange">
+      </tabs>
+    </view>
+    <view class="search" onTap="showSearch"></view>
+  </view>
+  <view class="title">
+    <text class="title-col">排名</text>
+    <text class="title-col"></text>
+    <text class="title-col">姓名</text>
+    <text class="title-col">加分</text>
+    <text class="title-col">扣分</text>
+    <text class="title-col" style="color: #46adf4">总分</text>
+  </view>
+  <list className="list">
+    <block a:for="{{items}}" class="list-block">
+      <list-item
+        className="list-item"
+        key="item-{{index}}"
+        index="{{item.userId}}"
+        last="{{index === (items.length - 1)}}"
+        arrow="{{item.arrow}}"
+        align="{{item.align}}"
+        onClick="onItemClick"
+        multipleLine="{{false}}"
+        wrap="{{false}}"
+      >
+        <view class="brief">
+          <text class="brief-col number">{{index>2 ? index+1 : ""}}</text>
+          <text class="brief-col"><image class="avatar" src="{{item.userImg ? item.userImg : '/image/logo.png'}}"></image></text>
+          <text class="brief-col">{{item.userName}}</text>
+          <text class="brief-col">{{item.sqIntegral}}</text>
+          <text class="brief-col">{{item.deduce}}</text>
+          <text class="brief-col amount" style="color: #46adf4">{{item.amount}}</text>
+        </view>
+      </list-item>
+    </block> 
+  </list>
+</view>
+<view class="filter {{showFilter ? 'show-filter' : ''}}">
+  <!-- <button type="default" plain hover-class="none" class="top-button" onTap="back">点击这里返回</button> -->
+  <view>
+    <form onSubmit="onSubmit" onReset="onReset" class="filter-form">
+    <tabs
+      tabs="{{tabsFilter}}"
+      fixed="{{true}}"
+      onTabClick="handleTabFilterClick"
+      onChange="handleTabFilterChange"
+    >
+      <block a:for="{{tabsFilter}}">
+        <tab-content key="{{index}}">
+          <view class="tab-content">
+            <radio-group class="radio-group" onChange="radioChange" name="tags{{index}}" a:if="{{index != 3}}" style="height: {{height}}px">
+              <label class="radio" a:for="{{item.tags}}" key="label-{{index}}">
+                <radio value="{{item.id}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />
+                <text class="radio-text">{{item.name}}</text>
+              </label>
+            </radio-group>
+            <view a:else></view>
+          </view>
+        </tab-content>
+      </block>
+    </tabs>
+    <view class="page-section-btns">
+      <!-- <view><button size="mini" type="ghost" formType="reset">重置</button></view> -->
+      <view><button size="mini" type="ghost" onTap="back">返回</button></view>
+      <view><button size="mini" type="primary" formType="submit">确定</button></view>
+    </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="item-first" onTap="firstTo">
+  <text class="item-title">抢单任务</text>
+  <text class="item-content">抢单任务需要设置限制人数和任务分值，设置成功后会从当前的可用积分中扣除人数×分值的积分</text>
+  <view class="item-right">
+    <text class="item-publish">发布</text>
+  </view>
+</view>
+<view class="item-second" onTap="secondTo">
+  <text class="item-title">挑战任务</text>
+  <text class="item-content">抢单任务需要设置限制人数和任务分值，设置成功后会从当前的可用积分中扣除人数×分值的积分</text>
+  <view class="item-right">
+    <text class="item-publish">发布</text>
+  </view>
+</view>
+<view class="item-third" onTap="thirdTo">
+  <text class="item-title">日常任务</text>
+  <text class="item-content">抢单任务需要设置限制人数和任务分值，设置成功后会从当前的可用积分中扣除人数×分值的积分</text>
+  <view class="item-right">
+    <text class="item-publish">发布</text>
+  </view>
+</view>

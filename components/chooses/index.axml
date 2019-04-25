@@ -1,0 +1,36 @@
+<view class="filter {{showFilter ? 'show-filter' : ''}}" style="height: {{height - 24}}px">
+  <!-- <button type="primary" class="top-button" onTap="all">选择全部</button> -->
+  <view class="search-filter">
+    <view class="select" onTap="showSelect"></view>
+    <view class="page-section-demo search">
+      <view class="search-outer">
+        <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+        <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <form onSubmit="onSubmit" onReset="onReset" class="filter-form">
+      <view class="page-section">
+        <view onChange="onChange" class="checkbox-wrapper">
+          <view class="checkbox" a:for="{{users}}" key="{{item.userId}}" onTap="choose" data-index="{{item}}">
+            <view class="{{item.checked ? 'item-checked' : 'item-none'}}"/>
+            <image src="{{item.avatar ? item.avatar : '/image/logo.png'}}" />
+            <text class="checkbox-text">{{item.userName}}</text>
+            <text class="checkbox-details">{{item.deptName}}</text>
+          </view>
+        </view>
+        <view class="page-section-btns">
+          <view>
+            <button size="mini" type="ghost" onTap="back">取消</button>
+          </view>
+          <view>
+            <button size="mini" type="primary" onTap="submit">确定</button>
+          </view>
+          <view a:if="{{reset}}"><button size="mini" type="warn" onTap="reset">重置</button></view>
+          <view a:else><button size="mini" type="primary" onTap="all">选择全部</button></view>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

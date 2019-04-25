@@ -1,0 +1,10 @@
+<view class="select-section">
+  <view class="title">选择图片<text class="details">如需修改请重新选择</text></view>
+  <view class="add-wrapper-new">
+    <text class="add" onTap="chooseImage">+</text>
+    <!-- <text class="name">小绿</text> -->
+  </view>
+  <view class="add-wrapper-new" a:for="{{toFilePaths}}">
+    <image class="add" src="{{item}}" onTap="preview" data-index="{{index}}" mode="aspectFill"></image>
+  </view>
+</view>

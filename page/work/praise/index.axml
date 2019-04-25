@@ -1,0 +1,93 @@
+<view class="page">
+  <form onSubmit="formSubmit" class="page-section">
+    <view class="page-section-title important">任务目标
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="必填" name="title" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.title}}" />
+    </view>
+    <view class="form-line" />
+    <view class="page-section-title important">支票内容
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="必填" name="content" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.content}}" />
+    </view>
+    <view class="form-line" />
+    <!-- <picker onChange="changePoints" value="{{arrIndexType}}" range="{{types}}" range-key="type" name="types">
+      <view class="row">
+        <view class="row-title">积分类型
+        </view>
+        <view class="row-extra">当前选择：{{types[arrIndexType].type}}                
+        </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker> -->
+    <view class="form-line" />
+    <view class="page-section-title">备注</view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="输入备注信息" name="textarea" style="font-size: 13px" />
+    </view>
+    <view class="form-line" />
+    <!-- <view class="picture-btns">
+      <view onTap="chooseImage">选择照片
+        <text class="details" a:if="{{filePaths.length == 0}}">图片大小不能超过4M</text>
+        <text class="details" a:else>您选择了{{filePaths.length}}张图片</text>
+      </view>
+    </view> -->
+    <imgs onLoad="load" onFilePaths="filePaths" />
+    <view class="form-line" />
+    <view class="picture-btns">
+      <view>签发日期
+        <text class="details">{{date}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <picker onChange="changePoints" value="{{arrIndexPoints}}" range="{{pointsArray}}" name="points" >
+      <view class="row important">
+        <view class="row-title">奖励积分<text>（可用积分 {{data}}）</text>
+        </view>
+        <view class="row-extra">当前选择：{{pointsArray[arrIndexPoints]}}
+        </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <!-- <view class="form-line" />
+    <picker onChange="changeFrom" value="{{arrIndexFrom}}" range="{{user}}" range-key="userName" name="from">
+      <view class="row">
+        <view class="row-title">申请人</view>
+        <view class="row-extra">当前选择：{{user[arrIndexFrom].userName}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <picker onChange="changeApp" value="{{arrIndexApp}}" range="{{apps}}" range-key="userName" name="app">
+      <view class="row">
+        <view class="row-title">审批人</view>
+        <view class="row-extra">当前选择：{{apps[arrIndexApp].userName}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker> -->
+    <!-- <view class="form-line" />
+    <picker onChange="changeTo" value="{{arrIndexTo}}" range="{{users}}" range-key="userName" name="to">
+      <view class="row">
+        <view class="row-title">抄送</view>
+        <view class="row-extra">当前选择：{{users[arrIndexTo].userName}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker> -->
+    <view class="form-line" />
+    <view class="select-section">
+      <view class="title">选择奖励人<text class="details">可以选择多人</text></view>
+      <view class="add-wrapper">
+        <text class="add" onTap="showFilter">+</text>
+        <!-- <text class="name">小绿</text> -->
+      </view>
+      <view class="add-wrapper" a:for="{{to}}">
+        <image class="add" src="{{item.avatar ? item.avatar : '/image/logo.png'}}" onTap="deleteUser" data-index="{{index}}"></image>
+        <text class="name">{{item.userName}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <button formType="submit" type="primary" loading="{{loading}}" class="button-form">提交</button>
+  </form>
+</view>
+<chooses onTo="to" onShowFilter="showFilter" showFilter="{{showFilter}}" />

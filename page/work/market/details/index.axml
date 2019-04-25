@@ -1,0 +1,36 @@
+<view class="page">
+    <view class="main">
+        <swiper
+        class="demo-swiper"
+        indicator-dots="{{true}}"
+        autoplay="{{true}}"
+        vertical="{{false}}"
+        interval="9000"
+        circular="{{false}}"
+        >
+        <block a:for="{{imgs}}">
+            <swiper-item key="{{index}}">
+                <image src="{{item}}" mode="aspectFit" style="width: 100%"/>
+            </swiper-item>
+        </block>
+        </swiper>
+    </view>
+    <view class="title">
+        <view class="top">{{options.goodName}}<text class="leave">剩余 {{options.goodKc}} 件</text></view>
+        <view class="bottom">{{options.dhIntegral}} 分<text class="has">已兑换 {{options.ydhNum}} 件</text></view>
+    </view>
+    <view class="content">
+        <view class="content-item people" onTap="toDetails">
+            <text class="text">他们都兑换了</text><text class="number">({{data}})</text>
+            <text class="right-arrow"></text>
+        </view>
+        <view class="content-item change" onTap="change">
+            <text class="text">选择兑换这件商品</text>
+            <text class="right-arrow"></text>
+        </view>
+    </view>
+    <view class="details">
+        <view class="details-title">商品详情</view>
+        <image src="{{imgs[1]}}" mode="widthFix" style="width: 100%" />
+    </view>
+</view>

@@ -1,0 +1,78 @@
+.page {
+  min-height: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.list {
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-shadow: 0 0 2px #ccc; 
+  margin: 0 10px 0;
+}
+
+/* 列表样式复写 */
+.list-item {
+  position: relative;
+}
+
+.list-item::after {
+  content: "";
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.am-list-line-bottom {
+  display: none;
+}
+
+.am-list-extra {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+}
+
+.am-list-thumb {
+  /* border-radius: 50%; */
+  width: 50px!important;
+  height: 50px!important;
+}
+
+.am-list-content {
+
+}
+/* 列表样式复写完成 */
+
+.list-item .name {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.brief-title {
+  font-size: 12px;
+  font-family: Tahoma, Helvetica, Arial, "\\5B8B体", sans-serif;
+}
+
+.brief-bottom {
+  font-size: 12px;
+}
+
+.brief-bottom-right {
+  float: right;
+  color: #888;
+}
+
+.brief-content {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.extra {
+  color: #ff862d;
+  font-weight: bold;
+  font-size: 13px;
+}

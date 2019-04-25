@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "日志详情",
+  "usingComponents":{
+    "details":"/components/details/index"
+  }
+}

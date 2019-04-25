@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="tabs">
+    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange">
+    </tabs>
+  </view>
+  <!-- <view class="search-filter">
+  <view class="select" onTap="showSelect"></view>
+  <view class="page-section-demo">
+    <view class="search-outer">
+      <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+      <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消      
+      </text>
+    </view>
+  </view>
+  </view> -->
+  <list className="list" a:if="{{items.length}}">
+    <block a:for="{{items}}">
+      <list-item className="list-item" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" arrow="{{false}}" align="{{item.align}}" multipleLine="{{true}}" wrap="{{true}}">
+        <text class="name">{{item.title}}        
+        </text>
+        <view class="brief">
+          <view class="brief-title">{{item.content}}          
+          </view>
+          <view class="brief-bottom">
+            <text class="brief-bottom-left" a:if="{{item.peopleNum}}" style="display: block">限制人数：{{item.peopleNum}}
+            </text>
+            <text class="brief-bottom-left" a:if="{{item.endTime}}">截止时间：{{item.endTime}}
+            </text>
+            <text class="brief-bottom-right">{{item.userState == '0' ? '发布中' : (item.userState == '1' ? '已领取' : (item.userState == '2' ? '审批中' : (item.userState == '3' ? '已完成' : '已拒绝')))}}
+            </text>
+          </view>
+        </view>
+        <view slot="extra" class="extra">{{item.taskIntegral>0 ? '+' : ''}}{{item.taskIntegral}}                
+        </view>
+      </list-item>
+      <view class="content">
+          <view class="content-item people" a:if="{{item.taskAndUserList.length}}">
+              <text class="text">他们已经接受了该任务：</text><text class="number" a:for="{{item.taskAndUserList}}">{{item.userName}}</text>
+          </view>
+          <view class="content-item change" onTap="change" a:if="{{item.userState == 0}}" data-index="{{index}}">
+              <text class="text">选择接受这项任务</text>
+              <text class="right-arrow"></text>
+          </view>
+          <view class="content-item change" onTap="commit" a:if="{{item.userState == 1}}" data-index="{{index}}" style="background-color: #FFB549">
+              <text class="text">提交完成这项任务</text>
+              <text class="right-arrow"></text>
+          </view>
+      </view>
+    </block>
+  </list>
+  <view a:else class="list-none">暂无任务</view>
+</view>

@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="tabs">
+    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange">
+    </tabs>
+  </view>
+  <!-- <view class="search">
+    <search-bar value="{{value}}" disabled="{{true}}" placeholder="输入关键字进行搜索" onInput="handleInput" onClear="handleClear" onFocus="handleFocus" onBlur="handleBlur" onCancel="handleCancel" onSubmit="handleSubmit" showCancelButton="{{false}}" hasBackButton="{{false}}" />
+  </view> -->
+  <!-- <view class="page-section"> -->
+  <view class="page-section-demo">
+    <view class="search-outer">
+      <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+      <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消
+      </text>
+    </view>
+  </view>
+  <!-- </view> -->
+  <list className="list">
+      <block a:for="{{items}}" class="list-block">
+      <list-item
+        className="list-item {{item.checked}}"
+        key="item-{{index}}"
+        index="{{index}}"
+        last="{{index === (items.length - 1)}}"
+        arrow="{{item.arrow}}"
+        align="{{item.align}}"
+        onClick="onItemClick"
+        multipleLine="{{true}}"
+        wrap="{{true}}"
+        disabled="{{item.checked}}"
+      >
+       <!-- <text class="title">{{item.behaviorCategory}}</text> -->
+        <text class="title">{{item.behaviorTitle}}</text>
+       <!-- <view>
+          <view class="brief-content"> {{item.behaviorTitle}}</view>
+       </view> -->
+        <!-- <text class="title">{{item.behaviorTitle}}</text> -->
+        <view class="brief">
+          <view class="brief-content">{{item.behaviorContent}}</view>
+          <view class="brief-bottom">
+            <text class="brief-bottom-left">积分奖励：<text class="points">{{item.zuiShaoIntegral ? item.zuiShaoIntegral : '0'}}-{{item.zuiDuoIntegral}}分</text></text>
+            <text class="brief-bottom-right">{{item.shenQingFangShi == '0' ? '每天一次' : '无限制'}}</text>
+          </view>
+        </view>
+      </list-item>
+    </block> 
+  </list>
+</view>

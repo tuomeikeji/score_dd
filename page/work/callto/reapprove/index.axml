@@ -1,0 +1,96 @@
+<view class="page">
+  <form onSubmit="formSubmit" class="page-section">
+    <view class="page-section-title">标题
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="" name="title" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.title}}" disabled="{{true}}"/>
+    </view>
+    <view class="form-line" />
+    <view class="page-section-title">内容  
+    </view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="" name="content" style="font-size: 13px" auto-height="{{true}}" maxlength="-1" value="{{options.content}}" disabled="{{true}}"/>
+    </view>
+    <view class="form-line" />
+    <input-item
+      className="input-text"
+      name="type"
+      disabled="true"
+      value="{{options.type == '1' ? '品德分' : (options.type == '2' ? '业绩分' : (options.type == '3' ? '行为分' : (options.type == '4' ? '奖扣分' : (options.type == '5' ? '奖励分' : (options.type == '6' ? '点赞分' : (options.type == '7' ? '任务分' : '行为分'))))))}}"
+    >
+      积分类型
+    </input-item>
+    <view class="form-line" />
+    <view class="page-section-title">审批备注</view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="输入备注信息" name="textarea" style="font-size: 14px" value="{{options.remark }}" disabled="{{true}}"/>
+    </view>
+     <view class="form-line" />
+    <view class="page-section-title">* 申诉理由</view>
+    <view class="page-section-demo">
+      <textarea auto-height placeholder="输入备注信息" name="reason" style="font-size: 14px" />
+    </view>
+    <!-- <view class="form-line" />
+    <view class="page-section-title">申诉理由</view>
+    <view class="page-section-demo important">
+      <textarea auto-height placeholder="输入申诉理由" name="reason" style="font-size: 14px" />
+    </view> -->
+    <view class="form-line" />
+    <view class="picture-btns">
+      <view onTap="chooseImage">选择照片
+        <text class="details" a:if="{{filePaths.length == 0}}">图片大小不能超过4M</text>
+        <text class="details" a:else>您选择了{{filePaths.length}}张图片</text>
+      </view>
+    </view> 
+    <imgs onLoad="load" onFilePaths="filePaths" />
+    <view class="form-line" />
+    <picker onChange="changePoints" value="{{arrIndexPoints}}" range="{{pointsArray}}" name="points">
+      <view class="row">
+        <view class="row-title">申请积分
+        </view>
+        <view class="row-extra">当前选择：{{pointsArray[arrIndexPoints]}}
+        </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <picker onChange="changeFrom" value="{{arrIndexFrom}}" range="{{user}}" range-key="userName" name="from">
+      <view class="row">
+        <view class="row-title">申请人</view>
+        <view class="row-extra">当前选择：{{user[arrIndexFrom].userName}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <picker onChange="changeApp" value="{{arrIndexApp}}" range="{{apps}}" range-key="userName" name="app">
+      <view class="row">
+        <view class="row-title">审批人</view>
+        <view class="row-extra">当前选择：{{apps[arrIndexApp].userName}}</view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <picker onChange="changeTo" value="{{arrIndexTo}} " range="{{ssuser}}"  range-key="userName" name="to">
+      <view class="row">
+        <view class="row-title">申诉人</view>
+        <view class="row-extra">当前选择：{{ssuser[arrIndexTo].userName}} </view>
+        <image class="row-arrow" src="/image/arrowright.png" mode="aspectFill" />
+      </view>
+    </picker>
+    <view class="form-line" />
+    <view class="select-section">
+      <view class="title">抄送<text class="details">审批通过后，通知抄送人</text></view>
+      <view class="add-wrapper">
+        <text class="add" onTap="showFilter">+</text>
+        <!-- <text class="name">小绿</text> -->
+      </view>
+      <view class="add-wrapper" a:for="{{to}}">
+        <image class="add" src="{{item.avatar ? item.avatar : '/image/logo.png'}}" onTap="deleteUser" data-index="{{index}}"></image>
+        <text class="name">{{item.userName}}</text>
+      </view>
+    </view>
+    <view class="form-line" />
+    <button formType="submit" type="primary" loading="{{loading}}" class="button-form">提交</button>
+  </form>
+</view>
+<chooses onTo="to" showFilter="{{showFilter}}" onShowFilter="showFilter"/>

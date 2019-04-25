@@ -1,0 +1,43 @@
+<view class="page">
+  <view class="search-filter">
+  <view class="select" onTap="showSelect"></view>
+  <view class="page-section-demo">
+    <view class="search-outer">
+      <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+      <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消      
+      </text>
+    </view>
+  </view>
+  </view>
+  <view class="like-title"><text>每周有 1 次点赞的机会，您目前剩余 {{has? "1" : "0"}} </text>
+  </view>
+  <list-item className="list-item item-user" thumb="{{item.avatar ? item.avatar : '/image/logo.png'}}" arrow="{{false}}" multipleLine="{{true}}" wrap="{{true}}">
+    <text class="name">{{user.userName}}        
+    </text>
+    <view class="brief">
+      <view class="brief-title">这里是你自己的被点赞记录。
+      </view>
+      <view class="brief-bottom">
+        <text class="brief-bottom-left">{{user.remark ? "已经被 " + user.remark + " 点赞了" : "你现在还没有被人点赞"}}</text>
+      </view>
+    </view>
+    <view slot="extra" class="extra">+ {{user.count * 20}}</view>
+  </list-item>
+  <list className="list">
+    <block a:for="{{items}}" class="list-block">
+      <list-item className="list-item" key="item-{{index}}" index="{{item}}" last="{{index === (items.length - 1)}}" thumb="{{item.avatar ? item.avatar : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}" onClick="onItemClick" multipleLine="{{true}}" wrap="{{true}}">
+        <text class="name">{{item.userName}}        
+        </text>
+        <view class="brief">
+          <view class="brief-title">点击右边的大拇指给她/他点赞！
+          </view>
+          <view class="brief-bottom">
+            <text class="brief-bottom-left">{{item.remark ? "已经被 " + item.remark + " 点赞了" : "现在还没有被人点赞"}}</text>
+            <image class="brief-bottom-right" src="{{item.liked ? '/image/like-active.png' : '/image/like.png'}}" style="width: 30px; height: 30px"></image>
+          </view>
+        </view>
+        <view slot="extra" class="extra">+ {{item.count * 20}}</view>
+      </list-item>
+    </block>
+  </list>
+</view>

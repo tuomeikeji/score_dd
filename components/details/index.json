@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents":{
+    "steps":"mini-ddui/es/steps/index"
+  }
+}

@@ -1,0 +1,86 @@
+/* 头部 */
+.top {
+  height: 140px;
+  margin-bottom: 10px;
+  /* border: 1px solid #ccc;
+  border-radius: 4px; */
+  box-shadow: 0 0 2px #ccc;
+  background-position: 60% 20%;
+}
+
+.top-title {
+  padding-top: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.top-title .sub {
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 2px;
+}
+
+.top-title .main {
+  font-size: 14px;
+}
+
+.top-title .main .green {
+  color: #00634e;
+  font-size: 15px;
+}
+
+.top .amount {
+  display: flex;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.top .amount .wrapper {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.top .amount .wrapper::after {
+  content: "";
+  height: 85%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #bbb;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top .amount .wrapper:last-child::after {
+  display: none;
+}
+
+.top .amount .wrapper .main {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.top .amount .wrapper .main .number {
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.top .amount .wrapper .bottom {
+  font-size: 9px;
+  display: inline-block;
+  color: #777;
+}
+
+.top .description {
+  margin: 7px 7px 0 7px;
+  font-size: 10px;
+  line-height: 14px;
+  color: #444;
+  text-indent: 2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

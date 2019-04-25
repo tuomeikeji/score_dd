@@ -1,0 +1,14 @@
+<view class="a-error-view-wrapper">
+    <image
+        class="a-error-view-pic"
+        src="/image/empty.png"
+    />
+    <view class="a-error-view-title">兑换成功</view>
+    <view class="a-error-view-action">
+        <view
+            class="a-error-view-button"
+            hover-class="a-error-view-button-hover"
+            onTap="onButtonTap"
+        >返回</view>
+    </view>
+</view>

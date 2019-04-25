@@ -1,0 +1,92 @@
+<view class="page">
+  <!-- <view class="top" style="background:url({{data.img}}) 100%/100% no-repeat"> -->
+  <top />
+  <!-- <view class="top" style="background-image: url('/image/background.png')">
+    <view class="title">
+      <view class="sub">Meisijia bussiness management services LTD.</view>
+      <view class="main"><text class="green">媚思嘉</text>企业管理服务有限公司</view>
+    </view>
+    <view class="amount">
+      <view class="wrapper">
+        <text class="main">
+          <text class="number">25</text>年
+        </text>
+        <text class="bottom">历史沉淀</text>
+      </view>
+      <view class="wrapper">
+        <text class="main">
+          <text class="number">516</text>名
+        </text>
+        <text class="bottom">精英员工</text>
+      </view>
+      <view class="wrapper">
+        <text class="main">
+          <text class="number">10</text>个
+        </text>
+        <text class="bottom">旗下品牌</text>
+      </view>
+      <view class="wrapper">
+        <text class="main">
+          <text class="number">13</text>家
+        </text>
+        <text class="bottom">美容机构</text>
+      </view>
+    </view>
+    <view class="description">媚思嘉企业投资管理服务有限公司（Meisijia  business management services LTD.）成立于1993年，一直追求美、把美作为一生事业的郭月香董事长就是一个不断学习追求完美的人。顾客随时变化的要求就是一种市场信息，是一种指导企业发展的方向，企业必须适应这种情况而相应变化。为了能让企业走在行业的前列，郭老师不仅自己不断地实践学习，还鼓励每一位员工充实自我，追求完美。公司一定要保持产品和服务的高品质，并且不断的推陈出新，我们要在激烈的市场竞争中站稳就要具有超前服务意识，不断学习，追求完美。</view>
+  </view> -->
+  <view class="content">
+    <view class="content-title">
+      <text>今日积分排名</text>
+    </view>
+    <view class="content-main">
+      <view class="number">
+        <text class="number-amount">{{data.rank == null ? '-' : data.rank}}</text>
+        <text class="number-text">排名</text>
+      </view>
+      <view class="number">
+        <text class="number-amount">{{data.amount == null ? '-' : data.amount}}</text>
+        <text class="number-text">今日积分</text>
+      </view>
+    </view>
+    <view class="content-bottom" onTap="rankTo">
+      <image src="{{first.userImg ? first.userImg : '/image/logo.png'}}" class="content-bottom-image"/>
+      <text class="content-bottom-text">{{first.userName ? first.userName : '暂时无人'}} 获得今日的积分冠军</text>
+      <text class="right-arrow"></text>
+    </view>
+  </view>
+  <list className="list">
+    <view solt="header" class="list-header" onTap="likeTo">
+      <text class="header-title">积分动态</text>
+      <text class="header-text">查看点赞详情</text>
+      <text class="right-arrow"></text>
+    </view>
+    <block a:for="{{items}}" class="list-block">
+      <list-item
+        className="list-item"
+        key="item-{{index}}"
+        index="{{index}}"
+        last="{{index === (items.length - 1)}}"
+        thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}"
+        arrow="{{item.arrow}}"
+        align="{{item.align}}"
+        onClick="onItemClick"
+        multipleLine="{{true}}"
+        wrap="{{true}}"
+      >
+        <text class="name">{{item.userName}}</text>
+        <view class="brief">
+          <view class="brief-title">{{item.approvalTitle}}</view>
+          <view class="brief-content">{{item.approvalContent}}</view>
+          <image class="brief-image" src="{{item}}" a:if="{{item}}" a:for="{{item.approvalImg1}}" catchTap="preview" data-index="{{index}}" mode="widthFix" />
+          <view class="brief-time">{{item.spTime}}</view>
+        </view>
+        <view slot="extra" class="extra" a:if="{{!(item.kIntegral > 0)}}">
+         +{{item.sqIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
+        </view>
+        <view slot="extra" class="extra" a:else>
+         -{{item.kIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
+        </view>
+      </list-item>
+    </block> 
+  </list>
+</view>

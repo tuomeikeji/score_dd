@@ -1,0 +1,24 @@
+<view class="page">
+  <list className="list">
+    <block a:for="{{items}}" class="list-block">
+      <swipe-action right="{{right}}" onRightItemClick="onRightItemClick" extra="{{item}}">
+      <list-item className="list-item" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" thumb="{{item.recordImg ? item.recordImg : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}" onClick="onItemClick" multipleLine="{{true}}" wrap="{{true}}">
+        <text class="name">{{item.recordName}}
+        </text>
+        <view class="brief">
+          <view class="brief-title">
+            {{item.userName}} {{item.deptName}}
+          </view>
+          <view class="brief-bottom">
+            <text class="brief-bottom-left">{{item.dhCreateTime}}</text>
+            <text class="brief-bottom-right">{{item.status=='0'?"审核中":item.status=="1"?"审核通过":"审核不通过"}}</text>
+          </view>
+        </view>
+        <view slot="extra" class="extra">
+          {{item.dhIntegral}}        
+        </view>
+      </list-item>
+      </swipe-action>
+    </block>
+  </list>
+</view>

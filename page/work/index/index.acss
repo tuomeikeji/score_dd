@@ -1,0 +1,90 @@
+.page {
+  min-height: 100%;
+}
+
+.top {
+  margin-bottom: 0;
+}
+
+/* content部分 */
+.content {
+  /* box-shadow: 0 0 2px #ccc; */
+  font-family: "microsoft yahei";
+  margin: 0 10px 0;
+}
+
+.content-title {
+  line-height: 35px;
+  color: #999;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.content-list {
+  background: #fff;
+  display: flex;
+  font-size: 14px;
+}
+
+.content-list .number {
+  flex: 1;
+  position: relative;
+}
+
+.content-list .number::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 1px solid #ddd;
+}
+
+.content-list .number .number-amount, .content-list .number .number-text {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.content-list .number .number-amount {
+  line-height: 65px;
+}
+
+.content-list .number .number-text {
+  padding-bottom: 7px;
+}
+
+/* main部分 */
+.main {
+  font-family: "microsoft yahei";
+  margin: 0 10px 0;
+}
+
+.main-title {
+  line-height: 35px;
+  color: #999;
+  font-size: 13px;
+  padding-left: 10px;
+  position: relative;
+}
+
+/* grid样式复写 */
+.am-grid-text {
+  font-size: 13px;
+}
+
+.am-grid-icon-container {
+  height: 40px;
+  width: 40px;
+}
+
+.count {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background: red;
+  color: #fff;
+  line-height: 17px;
+  text-align: center;
+  border-radius: 50%;
+}

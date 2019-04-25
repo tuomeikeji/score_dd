@@ -1,0 +1,281 @@
+.page {
+  min-height: 100%;
+  /* background: rebeccapurple; */
+}
+
+/* top筛选部分 */
+.top {
+  height: 40px;
+  background: #fff;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.top .select, .top .tabs, .top .search {
+  display: inline-block;
+}
+
+.top .select {
+  height: 40px;
+  width: 75px;
+  margin: 0 14px 0 0;
+  line-height: 40px;
+  border-bottom: none;
+}
+
+.right-arrow {
+  padding-left: 4px;
+}
+
+.right-arrow::after {
+  height: 4px;
+  width: 4px;
+}
+
+.top .search {
+  height: 40px;
+  width: 60px;
+  position: relative;
+  background: url('/image/search.png') no-repeat center;
+  background-size: 20px 20px;
+}
+
+.top .search::after {
+  content: "";
+  height: 50%;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  border-right: 1px solid #ddd;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page-section-demo {
+  flex: 1;
+  padding: 0;
+  background: #fff;
+  margin-top: -40px;
+  opacity: 0;
+  transition: margin-top .3s, opacity .3s;
+  transition-delay: .1s;
+}
+
+.page-section-demo.search {
+  margin-top: 0;
+  opacity: 1;
+}
+
+.search-outer {
+  box-sizing: border-box;
+  display:flex;
+  height:40px;
+  overflow:hidden;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #efeff4;
+}
+
+.search-outer * {
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex:1;
+  text-align: left;
+  display: block;
+  color: #000;
+  height: 24px;
+  font-size: 15px;
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.focus.search-cancel {
+  margin-right: 0;
+  opacity: 1;
+}
+
+.search-cancel {
+  margin-right:-40px;
+  display: inline-block;
+  opacity: 0;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #108ee9;
+  text-align: right;
+  transition: margin-right .3s,opacity .3s;
+  transition-delay: .1s;
+}
+
+.top .tabs {
+  flex: 1;
+}
+
+/* tab栏样式复写 */
+.am-tabs-bar {
+  height: 40px;
+}
+
+.am-tabs-bar-content-fixed {
+  height: 40px;
+}
+
+.am-tabs-bar-tab {
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* title部分 */
+.title {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+}
+
+.title .title-col {
+  flex: 1;
+  text-align: center;
+  font-family: "SimHei";
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+}
+
+/* list部分 */
+.list {
+  background: #F7F7F7;
+}
+
+.list-item {
+  background: #fff;
+  position: relative;
+  height: 50px;
+}
+
+.list-item:nth-child(2) {
+  margin-top: 10px;
+}
+
+.list-item:first-child .brief .number {
+  background: url('/image/number.png') no-repeat 30px/30px;
+  background-position: center;
+}
+
+.list-item:nth-child(2) .brief .number {
+  background: url('/image/number2.png') no-repeat 30px/30px;
+  background-position: center;
+}
+
+.list-item:nth-child(3) .brief .number {
+  background: url('/image/number3.png') no-repeat 30px/30px;
+  background-position: center;
+}
+
+.list-item::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* list样式复写 */
+.am-list-item {
+  padding-left: 0;
+}
+
+.am-list-line {
+  padding-right: 0;
+}
+
+.list .brief {
+  display: flex;
+  font-family: "SimHei";
+  font-size: 14px;
+  line-height: 50px;
+  color: #444;
+}
+
+.list .brief .brief-col {
+  flex: 1;
+  text-align: center;
+}
+
+.list .brief .avatar {
+  height: 35px;
+  width: 35px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.list .brief .number {
+  font-style: italic;
+}
+
+.filter {
+  background: #fff;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: -30%;
+  opacity: 0;
+  transition: left .3s,opacity .3s,z-index .3s;
+  transition-delay: .1s;
+  overflow: hidden;
+}
+
+.filter.show-filter {
+  opacity: 1;
+  left: 0;
+  z-index: 199;
+}
+
+/* filter部分页面样式 */
+.filter-form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.am-tabs {
+  flex: 1;
+}
+
+.radio-group {
+  /* padding: 10px 10px 0 10px; */
+  height: 100%;
+  overflow: auto;
+}
+
+.radio {
+  display: inline-block;
+  /* margin-bottom: 20rpx;
+  margin-right: 170rpx; */
+  margin: 20rpx 20rpx;
+}
+.radio-text {
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.page-section-btns {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.top-button {
+  margin: 0;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(50, 150, 250, 0.5);
+  height: 40px;
+}
