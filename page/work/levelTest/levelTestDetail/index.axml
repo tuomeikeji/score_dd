@@ -1,0 +1,32 @@
+<view class="page">
+  <list className="list">
+    <list-item className="list-item">
+      <text class="title">{{assName}}</text>
+      <view class="brief">
+        <view class="brief-bottom">
+          <!-- testPerNum:考核人數  -->
+          <text class="brief-bottom-left">{{shenQingFangShi == "0"?"每天一次":shenQingFangShi == "1"?"每月一次":"无限制"}}<text class="testPerNum"><image src="{{'/image/eye-icon.png'}}" mode="widthFix" class="eye-icon"/>{{item.numberid}}</text></text>
+          <text class="brief-bottom-right {{testStatus == '0'?'testStatus_n':'testStatus_y'}}">{{testStatus == "0"?"未考核":"已考核"}}</text>
+        </view>
+      </view>
+    </list-item>
+  </list>
+  <form onSubmit="formSubmit" class="page-form">
+    <block a:for="{{items}}" class="list-block">
+      <view class="section section_gap">
+        <view class="section_title">
+          <text>{{index+1}}、{{item.tName}}</text>
+          <text class="section_starIcon">*</text>
+          <text class="section_score">（答对得{{item.tIntegral}}分）</text>
+        </view>
+        <radio-group name="radio-group-{{item.tId}}" class="radio-group" onChange="radioChange">
+          <label><radio value="0_{{item.tId}}" checked="{{item.checked}}"/><text class="radio-txt">{{item.tA}}</text></label><view class="form-line" />
+          <label><radio value="1_{{item.tId}}" checked="{{item.checked}}"/><text class="radio-txt">{{item.tB}}</text></label><view class="form-line" />
+          <label><radio value="2_{{item.tId}}" checked="{{item.checked}}"/><text class="radio-txt">{{item.tC}}</text></label><view class="form-line" />
+          <label><radio value="3_{{item.tId}}" checked="{{item.checked}}"/><text class="radio-txt">{{item.tD}}</text></label><view class="form-line" />
+        </radio-group>
+      </view>
+    </block>
+    <button formType="submit" type="primary" loading="{{loading}}" class="button-form">提交</button>
+  </form>
+</view>

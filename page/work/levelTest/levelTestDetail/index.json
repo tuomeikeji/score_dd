@@ -1,0 +1,11 @@
+{
+  "defaultTitle": "考核内容",
+  "usingComponents":{
+    "input-item":"mini-ddui/es/input-item/index",
+    "chooses": "/components/chooses/index",
+    "imgs": "/components/imgs/index",
+
+    "list": "mini-ddui/es/list/index",
+    "list-item": "mini-ddui/es/list/list-item/index"
+  }
+}

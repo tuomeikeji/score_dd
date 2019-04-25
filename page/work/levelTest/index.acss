@@ -1,0 +1,71 @@
+.page {
+  /* padding: 0; */
+  padding-bottom: 10px;
+}
+
+.page-section-demo {
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 19;
+}
+.am-list-item{
+  padding-left: 0;
+}
+.am-list-line{
+  padding-left: 15px;
+}
+.list {
+  background: #F7F7F7;
+  margin: 0 10px 0;
+}
+
+.list-item {
+  background: #fff;
+  box-shadow: 0 0 2px #ccc;
+  margin-top: 10px;
+  position: relative;
+}
+
+.mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #333;
+  opacity: 0.4;
+}
+.list-item .title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.list-item .brief-content {
+  font-size: 12px;
+}
+
+.list-item .brief-bottom {
+  margin-top: 7px;
+  font-size: 12px;
+  color: #999;
+}
+
+.brief-bottom-left .eye-icon {
+  width: 14px;
+  margin-right: 4px;
+}
+
+.brief-bottom-left .testPerNum{
+  margin-left: 20px;
+}
+.brief-bottom-right {
+  float: right;
+}
+.testStatus_y{
+  color: #46adf4;
+}
+.testStatus_n{
+  color: #fd9087;
+}

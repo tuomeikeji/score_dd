@@ -1,0 +1,24 @@
+<view class="page">
+  <list className="list">
+      <block a:for="{{items}}" class="list-block">
+      <list-item
+        className="list-item list-item-{{item.checked}}"
+        key="item-{{index}}"
+        index="{{index}}"
+        onClick="onItemClick"
+        wrap="{{true}}"
+        disabled="{{item.checked}}"
+      >
+        <text class="title">{{index+1}}、{{item.assName}}</text>
+        <view class="brief">
+          <view class="brief-bottom">
+            <!-- testPerNum:考核人數 -->
+            <text class="brief-bottom-left">{{item.shenQingFangShi == "0"?"每天一次":item.shenQingFangShi == "1"?"每月一次":"无限制"}}<text class="testPerNum"><image src="{{'/image/eye-icon.png'}}" mode="widthFix" class="eye-icon"/>{{item.numberid}}</text></text>
+            <text class="brief-bottom-right {{item.testStatus == '0'?'testStatus_n':'testStatus_y'}}">{{item.testStatus == '0'?"未考核":"已考核"}}</text>
+          </view>
+        </view>
+        <view class="mask" a:if="{{item.checked}}"></view>
+      </list-item>
+    </block> 
+  </list>
+</view>

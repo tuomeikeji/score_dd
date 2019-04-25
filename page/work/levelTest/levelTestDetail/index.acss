@@ -1,0 +1,55 @@
+
+@import "../index.acss";
+.button-form {
+  font-size: 17px;
+  height: 44px;
+  line-height: 44px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.page{
+  background-color: #F7F7F7;
+}
+form.page-form{
+  padding: 0 10px;
+  font-size: 12px;
+  color: #333;
+}
+.section_title{
+  font-size: 14px;
+  padding:12px 8px;
+  line-height: 26px;
+}
+.section_title .section_starIcon{
+  color: #ff0000;
+  margin: 0 6px;
+  font-size: 22px;
+  line-height: 20px;
+  vertical-align: bottom;
+}
+.section_title .section_score{
+  color: #999;
+}
+
+.radio-group{
+  background-color: #fff;
+  border-radius:4px;
+}
+.radio-group label{
+  display:flex;
+  display: -webkit-flex;
+  align-items:center;
+  padding:12px 8px;
+
+}
+.radio-group label .radio-txt{
+  display: table-cell;
+  vertical-align:middle;
+}
+.radio-group label radio{
+  margin-right:8px;
+   flex-shrink:0;
+}
+.form-line{
+  margin-left:0;
+}
