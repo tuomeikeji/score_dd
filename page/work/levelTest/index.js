@@ -56,6 +56,7 @@ Page({
             this.setData({
               items: res.data.data.list
             })
+            
           },
           fail: (res) => {
             console.log("httpRequestFailDeclare----", res)
@@ -77,8 +78,9 @@ Page({
     var shenQingFangShi = this.data.items[index].shenQingFangShi //申请方式
     var assName = this.data.items[index].assName //题目
     var levelId = this.data.items[index].levelId //題id
+    var numberid = this.data.items[index].numberid
   
-    var url = `./levelTestDetail/index?levelId=${levelId}&assName=${assName}&shenQingFangShi=${shenQingFangShi}&testStatus=${testStatus}`
+    var url = `./levelTestDetail/index?levelId=${levelId}&assName=${assName}&shenQingFangShi=${shenQingFangShi}&testStatus=${testStatus}&numberid=${numberid}`
 
     dd.navigateTo({
       url: url

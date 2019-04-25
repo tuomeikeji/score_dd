@@ -179,7 +179,6 @@ Page({
         dd.navigateTo({ url: '../award/index' })
         break;
       case '积分抽奖':
-        dd.navigateTo({ url: '../levelTest/index' })
         break;
       case '爱心点赞':
         dd.navigateTo({ url: '../like/index' })
@@ -189,6 +188,9 @@ Page({
         break;
       case '积分申诉':
         dd.navigateTo({ url: '../callto/index' })
+        break;
+      case '水平考核':
+        dd.navigateTo({ url: '../levelTest/index' })
         break;
     }
   },

@@ -8,7 +8,8 @@ Page({
     levelId: "", //大题id
     shenQingFangShi: "", //申请方式 
     testStatus: "0", //是否已考核 
-    assName: "",
+    assName: "",//大题题目
+    numberid:"",
     answerArr: []
   },
 
@@ -18,7 +19,8 @@ Page({
       levelId: options.levelId,
       assName: options.assName,
       shenQingFangShi: options.shenQingFangShi,
-      testStatus: options.testStatus
+      testStatus: options.testStatus,
+      numberid: options.numberid
     })
     
   },

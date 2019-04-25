@@ -1,4 +1,5 @@
 <view class="page">
+<view a:if="{{items.length > 0}}">
   <list className="list">
       <block a:for="{{items}}" class="list-block">
       <list-item
@@ -21,4 +22,9 @@
       </list-item>
     </block> 
   </list>
+  </view>
+  <view a:if="{{items.length <=0}}" class="emptyBox">
+    <image src="{{'/image/empty.png'}}" mode="widthFix"/>
+    <text>暂无数据</text>
+  </view>
 </view>

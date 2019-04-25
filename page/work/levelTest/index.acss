@@ -69,3 +69,17 @@
 .testStatus_n{
   color: #fd9087;
 }
+
+.emptyBox{
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 130px;
+  text-align: center;
+
+}
+.emptyBox image{
+  margin-bottom: 20px;
+}
+.emptyBox text{
+  font-size: 12px;
+}

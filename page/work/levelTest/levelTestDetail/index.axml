@@ -5,7 +5,7 @@
       <view class="brief">
         <view class="brief-bottom">
           <!-- testPerNum:考核人數  -->
-          <text class="brief-bottom-left">{{shenQingFangShi == "0"?"每天一次":shenQingFangShi == "1"?"每月一次":"无限制"}}<text class="testPerNum"><image src="{{'/image/eye-icon.png'}}" mode="widthFix" class="eye-icon"/>{{item.numberid}}</text></text>
+          <text class="brief-bottom-left">{{shenQingFangShi == "0"?"每天一次":shenQingFangShi == "1"?"每月一次":"无限制"}}<text class="testPerNum"><image src="{{'/image/eye-icon.png'}}" mode="widthFix" class="eye-icon"/>{{numberid}}</text></text>
           <text class="brief-bottom-right {{testStatus == '0'?'testStatus_n':'testStatus_y'}}">{{testStatus == "0"?"未考核":"已考核"}}</text>
         </view>
       </view>
