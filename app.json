@@ -9,12 +9,12 @@
     "page/personal/index/index",
 
     "page/work/declare/index",
+    "page/work/declare/approve/index",
     "page/work/market/index",
     "page/work/market/details/index",
     "page/work/market/logs/index",
     "page/work/market/success/index",
     "page/work/award/index",
-    "page/work/declare/approve/index",
     "page/work/praise/index",
     "page/work/take/index",
     "page/work/like/index",
@@ -26,6 +26,8 @@
     "page/work/publish/daily/index",
     "page/work/callto/index",
     "page/work/callto/reapprove/index",
+    "page/work/levelTest/index",
+    "page/work/levelTest/levelTestDetail/index",
 
     "page/work/index/logs/index",
     "page/work/index/wait/index",
