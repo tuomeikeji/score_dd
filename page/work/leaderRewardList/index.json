@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "奖扣日志",
+  "usingComponents": {
+    "list": "mini-ddui/es/list/index",
+    "list-item": "mini-ddui/es/list/list-item/index",
+    "top": "/components/top/index"
+  },
+  "pullRefresh": true,
+  "onReachBottomDistance":50
+}

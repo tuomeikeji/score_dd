@@ -1,0 +1,338 @@
+.page {
+  min-height: 100%;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+/* 头部 */
+/* .top {
+  height: 140px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 2px #ccc;
+  background-position: 60% 20%;
+}
+
+.top .title {
+  padding-top: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.top .title .sub {
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 2px;
+}
+
+.top .title .main {
+  font-size: 14px;
+}
+
+.top .title .main .green {
+  color: #00634e;
+  font-size: 15px;
+}
+
+.top .amount {
+  display: flex;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.top .amount .wrapper {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.top .amount .wrapper::after {
+  content: "";
+  height: 85%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #bbb;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top .amount .wrapper:last-child::after {
+  display: none;
+}
+
+.top .amount .wrapper .main {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.top .amount .wrapper .main .number {
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.top .amount .wrapper .bottom {
+  font-size: 9px;
+  display: inline-block;
+  color: #777;
+}
+
+.top .description {
+  margin: 7px 7px 0 7px;
+  font-size: 10px;
+  line-height: 14px;
+  color: #444;
+  text-indent: 2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+} */
+
+/* content部分 */
+.content {
+  background: #fff;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-shadow: 0 0 2px #ccc;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.content-title {
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background: #F7F7F7;
+}
+
+  
+.content-title text {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 30px;
+  position: relative;
+}
+
+.content-title::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-title text::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  background: url("/image/list-numbered.png") 100%/100%;
+}
+
+.content-main {
+  display: flex;
+  height: 90px;
+  position: relative;
+}
+
+.content-main .number {
+  flex: 1;
+}
+
+.content-main::after {
+  content: "";
+  width: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-main .number .number-amount, .content-main .number .number-text {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.content-main .number .number-amount {
+  line-height: 60px;
+  font-size: 30px;
+  color: #46adf4;
+}
+
+.content-main .number .number-text {
+  color: #999;
+}
+
+.content-bottom {
+  line-height: 40px;
+  position: relative;
+}
+
+.content-bottom .content-bottom-image {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-left: 14px;
+  margin-right: 7px;
+}
+
+.content-bottom .content-bottom-text {
+  color: #46adf4;
+  font-size: 13px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 15px;
+}
+
+/* 列表部分 */
+.list {
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  box-shadow: 0 0 2px #ccc; 
+  margin: 10px;
+}
+
+.list-header {
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+}
+
+.list-header .header-title {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 30px;
+  position: relative;
+}
+
+.list-header::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-header .header-title::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  background: url("/image/database.png") 100%/100%;
+}
+
+.list-header .header-text {
+  float: right;
+  margin-right: 34px;
+  color: #46adf4;
+}
+
+/* 列表样式复写 */
+.list-item {
+  position: relative;
+}
+
+.list-item::after {
+  content: "";
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.am-list-line-bottom {
+  display: none;
+}
+
+.am-list-extra {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+}
+
+.am-list-thumb {
+  border-radius: 50%;
+}
+
+.am-list-content {
+
+}
+/* 列表样式复写完成 */
+
+.list-item .name {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.brief-title {
+  font-size: 13px;
+}
+
+.brief-content {
+  margin-top: 4px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.brief-image {
+  display: inline-block;
+  /* height: 100px; */
+  width: 100px;
+  margin-right: 23px;
+  /* margin-bottom: 14px; */
+}
+
+.brief-time {
+  /* margin-top: 10px; */
+  font-size: 12px;
+  color: #777;
+}
+
+.extra {
+  color: #46adf4;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* .scroll{
+  position: relative;
+} */
+
+.scrollToTopIcon{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom:30px;
+  right: 30px;
+  z-index: 100;
+}
+.scrollToTopIcon image{
+  width: 28px;
+  height: 28px;
+}
+.noMoreDataTxt{
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 0;
+}
+.noDataTxt{
+  text-align: center;
+  font-size: 13px;
+  padding-top: 200px;
+}

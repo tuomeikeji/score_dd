@@ -1,0 +1,40 @@
+<view class="page">
+   <scroll-view  class="scroll" scroll-y="{{true}}" onScrollToUpper="" onScrollToLower="loadMoreData" style="height: {{winH}}px;" scroll-top="{{scrollTop}}" onScroll="scrollFun">
+    <view>
+      <list className="list">
+        <block a:for="{{dataArray}}" a:for-item="articles" a:for-index="dataArrayIndex" class="list-block">
+          <block a:for="{{articles}}" a:for-item="item" a:for-index="index" class="list-block">
+            <list-item
+              className="list-item"
+              key="item-{{index}}"
+              index="{{index}}"
+              thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}"
+              multipleLine="{{true}}"
+              wrap="{{true}}"
+            >
+              <text class="name">{{item.userName}}</text>
+              <view class="brief">
+                <view class="brief-title">{{item.approvalTitle}}</view>
+                <view class="brief-content">{{item.approvalContent}}</view>
+                <!-- <image class="brief-image" src="{{item}}" a:if="{{item}}" a:for="{{item.approvalImg1}}" catchTap="preview" data-index="{{index}}" mode="widthFix" /> -->
+                <view class="brief-time">{{item.spTime}}</view>
+              </view>
+              <view slot="extra" class="extra" a:if="{{!(item.kIntegral > 0)}}">
+              +{{item.sqIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '管理奖扣分' : (item.integralTypeId == '5' ? '自由奖扣分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '积分支票' : '任务分'))))))}}
+              </view>
+              <view slot="extra" class="extra" a:else>
+              -{{item.kIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '管理奖扣分' : (item.integralTypeId == '5' ? '自由奖扣分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '积分支票' : '任务分'))))))}}
+              </view>
+            </list-item>
+          </block> 
+        </block> 
+      </list>
+    </view>
+    <view a:if="{{noData}}" class="noDataTxt">暂无数据</view>
+    <view a:if="{{!hasNextPage}}" class="noMoreDataTxt">无更多数据</view>
+  </scroll-view>
+  <!-- <view onClick="scrollToTop" class="scrollToTopIcon" a:if="{{topIconShow}}"><image src="/image/top.png" mode="widthFix"/></view> -->
+</view>
+<!-- 积分类型 1.品德 2 业绩 3行为 4.管理 5自由奖扣 6.爱心点赞.7 积分支票  8悬赏任务 -->
+
+    
