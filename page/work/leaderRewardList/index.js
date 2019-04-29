@@ -4,7 +4,7 @@ Page({
   data: {
     items: [],
     hasNextPage:true,
-    pageSize:5,
+    pageSize:10,
     dataArray: [],
     scrollTop:0,
     // topIconShow:false,
