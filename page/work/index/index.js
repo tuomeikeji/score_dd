@@ -182,6 +182,7 @@ Page({
         dd.navigateTo({ url: '../award/index' })
         break;
       case '积分抽奖':
+      // dd.navigateTo({ url: '../luckyDraw/index' })
         break;
       case '爱心点赞':
         dd.navigateTo({ url: '../like/index' })
