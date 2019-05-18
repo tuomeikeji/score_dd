@@ -80,7 +80,7 @@
       </view>
     </view>
     <view class="form-line" />
-    <button formType="submit" type="primary" loading="{{loading}}" class="button-form">提交</button>
+    <button formType="submit" type="primary" loading="{{loading}}" disabled="{{disabled}}" class="button-form">提交</button>
   </form>
 </view>
 <chooses onTo="to" showFilter="{{showFilter}}" onShowFilter="showFilter"/>

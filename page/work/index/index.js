@@ -182,7 +182,7 @@ Page({
         dd.navigateTo({ url: '../award/index' })
         break;
       case '积分抽奖':
-      // dd.navigateTo({ url: '../luckyDraw/index' })
+        dd.navigateTo({ url: '../luckyDraw/index' })
         break;
       case '爱心点赞':
         dd.navigateTo({ url: '../like/index' })
@@ -194,7 +194,8 @@ Page({
         dd.navigateTo({ url: '../callto/index' })
         break;
       case '水平考核':
-        dd.navigateTo({ url: '../levelTest/index' })
+        // dd.navigateTo({ url: '../levelTest/index' })
+        dd.navigateTo({ url: '../luckyDraw/index' })
         break;
     }
   },

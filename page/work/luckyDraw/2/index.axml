@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="conbox">
+	  <view class="container">
+      <image src="/image/canvas/bg.png" class="cont" mode=""></image>
+			<image src="/image/canvas/caidai.png" class="caidai" mode=""></image>
+      <view class="main">
+				<view class="canvas-container">
+
+					<view animation="{{animationData}}" class="canvas-content" id="zhuanpano" style="">
+					<!-- <view :animation="animationData" class="canvas-content" id="zhuanpano"  :style="[{transform:'rotate('+runDeg+')'}]"> -->
+						<!-- <canvas class="canvas" canvas-id="canvas"></canvas> -->
+            <!-- '+item.lineTurn+' -->
+            <!-- style="height: {{winH}}px;" -->
+						<view class="canvas-line">
+							<view class="canvas-litem" a:for="{{awardsList}}" a:for-index="item" a:for-item="index1" a:key="index1" style="transform:rotate('30deg')"></view>
+						</view>
+
+						<view class="canvas-list">
+							<view class="canvas-item" a:for="{{awardsList}}" a:for-index="iteml" a:for-item="index2" a:key="index2">
+								<view class="canvas-item-text" style="transform:rotate('30deg')">
+									<text>{{iteml.award}}</text>
+									<image class="canvas-item-text-img" src="/image/canvas/xiaolian.png" a:if="{{iteml.type == 3}}"></image>
+									<image class="canvas-item-text-img" src="/image/canvas/xiaolian.png" a:if="{{iteml.type == 2}}"></image>
+									<image class="canvas-item-text-img" src="/image/canvas/xiaolian.png" a:if="{{iteml.type == 1}}"></image>
+									<image class="canvas-item-text-img" src="/image/canvas/xiaolian.png" a:if="{{iteml.type == 0}}"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+
+					<view onTap="tapname" class="canvas-btn {{btnDisabled}}">开始 </view>
+				</view>
+			</view>
+    </view>
+  </view>
+</view>

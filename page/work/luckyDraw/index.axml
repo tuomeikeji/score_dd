@@ -1,1 +1,0 @@
-<web-view id="web-view-1" src="https://open.dingtalk.com/mobile" onMessage="test"></web-view>
