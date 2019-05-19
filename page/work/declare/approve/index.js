@@ -168,12 +168,14 @@ Page({
 
         console.log('successApp----', res)
         
-        dd.showToast({
-          duration: 3000,
+        dd.alert({
+          title: '',
           content: '申请成功', // 文字内容
-          success: dd.navigateBack()
+          success: () => {
+              dd.navigateBack()
+          }
         })
-        // dd.navigateBack()
+        
       },
       fail: (res) => {
         console.log("httpRequestFailApp----", res)

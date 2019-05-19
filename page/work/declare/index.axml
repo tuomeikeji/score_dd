@@ -1,6 +1,6 @@
 <view class="page">
   <view class="tabs">
-    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange">
+    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange" data-index="{{index}}" key="tabs-item-{{index}}" current="{{current}}">
     </tabs>
   </view>
   <!-- <view class="search">

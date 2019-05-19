@@ -16,6 +16,7 @@ Page({
       {
         title: '业绩积分'
     }],
+    current:0,
 
     menuIds: '', // 禁用标题id
   },
@@ -196,22 +197,26 @@ Page({
     })
   },
   handleTabClick({ index }) {
+    console.log(index)
     switch (index) {
       case 0 :
       this.setData({
-        url: '/work/declareBehavior'
+        url: '/work/declareBehavior',
+        current:0,
       });
       this.listShow();
       break;
       case 1 :
       this.setData({
-        url: '/work/declareMoral'
+        url: '/work/declareMoral',
+        current:1,
       });
       this.listShow();
       break;
       case 2:
       this.setData({
-        url: '/work/declareResults'
+        url: '/work/declareResults',
+        current:2,
       });
       this.listShow();
       break;

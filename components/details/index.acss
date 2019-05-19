@@ -33,7 +33,9 @@
 
 .main .item {
   /* height: 35px; */
-  line-height: 35px;
+ padding: 10px 0;
+ line-height: 24px;
+ overflow: hidden;
 }
 
 .main .item-left {
@@ -42,14 +44,18 @@
 
 .main .item-right {
   float: right;
+  width: 75%;
+  text-align: left;
 }
 
 .main .image {
+  height: 90px;
+  width:90px;
+  background: #eee;
   display: inline-block;
-  /* height: 100px; */
-  width: 100px;
-  margin-right: 14px;
-  /* margin-bottom: 14px; */
+  line-height: 60px;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .am-vertical-steps {

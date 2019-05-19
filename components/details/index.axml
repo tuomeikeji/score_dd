@@ -7,51 +7,53 @@
     <view class="form-line" /></view>
   <view class="main">
     <view class="item">
-      <text class="item-left">审批编号</text>
+      <text class="item-left">审批编号：</text>
       <text class="item-right">{{data.approvalNum}}</text>
     </view>
     <view class="item">
-      <text class="item-left">所在部门</text>
+      <text class="item-left">所在部门：</text>
       <text class="item-right">{{data.userDept}}</text>
     </view>
     <view class="item">
-      <text class="item-left">审批标题</text>
-      <text class="item-right" style="padding-left: 35%;display: block">{{data.approvalTitle}}</text>
+      <text class="item-left">审批标题：</text>
+      <text class="item-right">{{data.approvalTitle}}</text>
     </view>
     <view class="item">
-      <text class="item-left">审批内容</text>
-      <text class="item-right" style="padding-left: 35%;display: block;float: none">{{data.approvalContent}}</text>
+      <text class="item-left">审批内容：</text>
+      <text class="item-right">{{data.approvalContent}}</text>
     </view>
     <view class="item">
-      <text class="item-left">申请时间</text>
+      <text class="item-left">申请时间：</text>
       <text class="item-right">{{data.sqTime}}</text>
     </view>
     <view class="item">
-      <text class="item-left">积分类型</text>
+      <text class="item-left">积分类型：</text>
       <text class="item-right">{{data.integralTypeId == '1' ? '品德分' : (data.integralTypeId == '2' ? '业绩分' : (data.integralTypeId == '3' ? '行为分' : (data.integralTypeId == '4' ? '奖扣分' : (data.integralTypeId == '5' ? '奖励分' : (data.integralTypeId == '6' ? '点赞分' : (data.integralTypeId == '7' ? '任务分' : '行为分'))))))}}</text>
     </view>
     <view class="item" a:if="{{!data.kIntegral}}">
-      <text class="item-left">申请积分</text>
+      <text class="item-left">申请积分：</text>
       <text class="item-right">{{data.addIntegral}}</text>
     </view>
     <view class="item" a:else>
-      <text class="item-left">扣除积分</text>
+      <text class="item-left">扣除积分：</text>
       <text class="item-right">{{data.kIntegral}}</text>
     </view>
     <view class="item">
-      <text class="item-left">备注</text>
-      <text class="item-right" style="padding-left: 35%;display: block">{{data.spRemark}}</text>
+      <text class="item-left">备注：</text>
+      <text class="item-right">{{data.SpRemark == null?'无':data.SpRemark}}</text>
     </view>
     <!-- 申诉理由 -->
     <view class="item" a:if="{{data.appReason}}">
-      <text class="item-left">申诉理由</text>
-      <text class="item-right" style="padding-left: 35%;display: block;color: blue">{{data.appReason}}</text>
+      <text class="item-left">申诉理由：</text>
+      <text class="item-right" style="color: blue">{{data.appReason}}</text>
     </view>
     <view class="item" a:if="{{status == 2}}">
-      <text class="item-left">不过原因</text>
-      <text class="item-right" style="padding-left: 35%;display: block;color: red">{{data.disapproveUndo ? data.disapproveUndo : '无'}}</text>
+      <text class="item-left">不过原因：</text>
+      <text class="item-right" style="color: red">{{data.disapproveUndo ? data.disapproveUndo : '无'}}</text>
     </view>
-    <image class="image" a:for="{{data.approvalImg}}" src="{{item}}" onTap="preview" data-index="{{index}}" mode="widthFix" />
+    <view a:if="{{data.approvalImg[0].length>0}}">
+      <image class="image" a:for="{{data.approvalImg}}" src="{{item}}" onTap="preview" data-index="{{index}}" mode="aspectFill" />
+    </view>
   </view>
   <view class="page-section-btns" a:if="{{status == 0 && !steps}}">
     <view>

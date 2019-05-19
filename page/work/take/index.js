@@ -3,6 +3,7 @@ var app = getApp()
 Page({
   data: {
     loading: false,
+    disabled:false,
     
     types: [],
 
@@ -71,7 +72,8 @@ Page({
   formSubmit(e) {
     console.log('formSubmit----', e.detail.value)
     this.setData({
-      loading: true
+      loading: true,
+      disabled:true,
     })
     let that = this
 
@@ -107,7 +109,8 @@ Page({
         content: '请您填写关键内容'
       })
       that.setData({
-        loading: false
+        loading: false,
+        disabled:false
       })
       return
     }
@@ -118,7 +121,8 @@ Page({
         content: '请您选择奖扣员工'
       })
       that.setData({
-        loading: false
+        loading: false,
+        disabled:false
       })
       return
     }
@@ -129,7 +133,8 @@ Page({
         content: '您的可用积分不足'
       })
       that.setData({
-        loading: false
+        loading: false,
+        disabled:false
       })
       return
     }
@@ -154,13 +159,16 @@ Page({
       success: (res) => {if ((res.data.code != 0 && !res.data.code ) || res.data.code == 1001) { dd.showToast({ content: res.msg, duration: 3000 }); dd.reLaunch({ url: '/page/register/index/index' }); return}
 
         console.log('successApp----', res)
-        dd.showToast({
-          duration: 3000,
+        dd.alert({
+          title: '',
           content: '奖扣成功', // 文字内容
+          success: () => {
+              dd.navigateBack({
+                delta: 2
+              })
+          }
         })
-        dd.navigateBack({
-          delta: 2
-        })
+        
       },
       fail: (res) => {
         console.log("httpRequestFailApp----", res)
@@ -169,7 +177,8 @@ Page({
       },
       complete: () => {
         that.setData({
-          loading: false
+          loading: false,
+          disabled:false
         })
       }
     })
@@ -187,7 +196,8 @@ Page({
         content: '请您填写关键内容'
       })
       this.setData({
-        loading: false
+        loading: false,
+        disabled:false
       })
       return
     }
@@ -198,7 +208,8 @@ Page({
         content: '请您选择奖扣员工'
       })
       that.setData({
-        loading: false
+        loading: false,
+        disabled:false
       })
       return
     }
@@ -230,7 +241,8 @@ Page({
         fail: function(res) {
           var content = JSON.stringify(res); switch (res.error) {case 13: content = '连接超时'; break; case 12: content = '网络出错'; break; case 19: content = '访问拒绝'; } dd.alert({content: content, buttonText: '确定'});
           _this.setData({
-            loading: false
+            loading: false,
+            disabled:false
           })
         },
       })
