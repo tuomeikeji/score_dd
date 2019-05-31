@@ -14,9 +14,9 @@ Page({
     this.getSystemInfoPage()
     this.loadInitData()
   },
-  // onPullDownRefresh(){
-  //   this.loadInitData()
-  // },
+  onPullDownRefresh(){
+    this.loadInitData()
+  },
   // onReachBottom() {
   //   this.loadMoreData()
   // },
@@ -148,20 +148,5 @@ Page({
         });
       }
     })
-  },
-  scrollFun(e){
-    var that=this;
-    if(e.detail.scrollTop>100){
-      that.setData({
-        'topIconShow':true
-      })
-    }else{
-      that.setData({
-        'topIconShow': false
-      })
-    }
-  },
-  scrollToTop() {
-    console.log("gotop")
   }
 })

@@ -6,5 +6,6 @@
 
     "tabs": "mini-ddui/es/tabs/index",
     "tab-content": "mini-ddui/es/tabs/tab-content/index"
-  }
+  },
+  "pullRefresh": true
 }

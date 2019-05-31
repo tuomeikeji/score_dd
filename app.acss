@@ -118,3 +118,14 @@ button {
   -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
+
+.noMoreDataTxt{
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 0;
+}
+.noDataTxt{
+  text-align: center;
+  font-size: 13px;
+  padding-top: 200px;
+}

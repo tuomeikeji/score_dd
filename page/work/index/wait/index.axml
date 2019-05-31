@@ -4,34 +4,42 @@
     </tabs>
   </view>
   <view class="search-filter">
-  <view class="select" onTap="showSelect"></view>
-  <view class="page-section-demo">
-    <view class="search-outer">
-      <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
-      <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消      
-      </text>
+    <view class="select" onTap="showSelect"></view>
+    <view class="page-section-demo">
+      <view class="search-outer">
+        <input class="search-input" placeholder="搜索" value="{{search}}" onFocus="focusSearch" onBlur="blurSearch" onConfirm="doneSearch" onInput="handleSearch" />
+        <text class="search-cancel {{active ? 'focus' : ''}}" onTap="clearSearch">取消      
+        </text>
+      </view>
     </view>
   </view>
-  </view>
-  <list className="list" a:if="{{items.length}}">
-    <block a:for="{{items}}" class="list-block">
-      <list-item className="list-item" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}" onClick="onItemClick" multipleLine="{{true}}" wrap="{{true}}">
-        <text class="name">{{item.userName}}        
-        </text>
-        <view class="brief">
-          <view class="brief-title">            {{item.approvalTitle}}          
-          </view>
-          <view class="brief-bottom">
-            <text class="brief-bottom-left">{{item.status == '0' ? '审批中' : (item.status == '1' ? '审批通过' : '审批不过')}}
-            </text>
-            <text class="brief-bottom-right">{{item.sqTime}}
-            </text>
-          </view>
-        </view>
-        <view slot="extra" class="extra">        {{item.sqIntegral>0 ? '+' : ''}}{{item.sqIntegral}}    {{item.typeId == '1' ? 'A分' : (item.typeId == '2' ? 'B分' : 'C分')}}                
-        </view>
-      </list-item>
-    </block>
-  </list>
-  <view a:else class="list-none">暂无内容</view>
+  <!-- style="height: {{winH}}px;" -->
+  <scroll-view  class="scroll" scroll-y="{{true}}" onScrollToLower="loadMoreData" style="height:{{winH}}px;">
+    <view>
+      <list className="list">
+        <block a:for="{{dataArray}}" a:for-item="articles" a:for-index="dataArrayIndex" class="list-block">
+          <block a:for="{{articles}}" a:for-item="item" a:for-index="index" class="list-block">
+            <list-item className="list-item" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}" onClick="onItemClick" multipleLine="{{true}}" wrap="{{true}}">
+              <text class="name">{{item.userName}}        
+              </text>
+              <view class="brief">
+                <view class="brief-title">            {{item.approvalTitle}}          
+                </view>
+                <view class="brief-bottom">
+                  <text class="brief-bottom-left">{{item.status == '0' ? '审批中' : (item.status == '1' ? '审批通过' : '审批不过')}}
+                  </text>
+                  <text class="brief-bottom-right">{{item.sqTime}}
+                  </text>
+                </view>
+              </view>
+              <view slot="extra" class="extra">        {{item.sqIntegral>0 ? '+' : ''}}{{item.sqIntegral}}    {{item.typeId == '1' ? 'A分' : (item.typeId == '2' ? 'B分' : 'C分')}}                
+              </view>
+            </list-item>
+          </block> 
+        </block> 
+      </list>
+    </view>
+    <view a:if="{{noData}}" class="noDataTxt">暂无数据</view>
+    <view a:if="{{!hasNextPage}}" class="noMoreDataTxt">无更多数据</view>
+  </scroll-view>
 </view>
