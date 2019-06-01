@@ -60,33 +60,41 @@
       <text class="header-text">查看点赞详情</text>
       <text class="right-arrow"></text>
     </view>
-    <block a:for="{{items}}" class="list-block">
-      <list-item
-        className="list-item"
-        key="item-{{index}}"
-        index="{{index}}"
-        last="{{index === (items.length - 1)}}"
-        thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}"
-        arrow="{{item.arrow}}"
-        align="{{item.align}}"
-        onClick="onItemClick"
-        multipleLine="{{true}}"
-        wrap="{{true}}"
-      >
-        <text class="name">{{item.userName}}</text>
-        <view class="brief">
-          <view class="brief-title">{{item.approvalTitle}}</view>
-          <view class="brief-content">{{item.approvalContent}}</view>
-          <image class="brief-image" src="{{item}}" a:if="{{item}}" a:for="{{item.approvalImg1}}" catchTap="preview" data-index="{{index}}" mode="widthFix" />
-          <view class="brief-time">{{item.spTime}}</view>
-        </view>
-        <view slot="extra" class="extra" a:if="{{!(item.kIntegral > 0)}}">
-         +{{item.sqIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
-        </view>
-        <view slot="extra" class="extra" a:else>
-         -{{item.kIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
-        </view>
-      </list-item>
-    </block> 
   </list>
+  <scroll-view  class="scroll" scroll-y="{{true}}" onScrollToLower="loadMoreData" style="height:400px;">
+      <view a:if="{{hasInitData}}">
+        <list className="list">
+          <block a:for="{{articles}}" a:for-item="item" a:for-index="index" class="list-block">
+            <list-item
+              className="list-item"
+              key="item-{{index}}"
+              index="{{index}}"
+              last="{{index === (articles.length - 1)}}"
+              thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}"
+              arrow="{{item.arrow}}"
+              align="{{item.align}}"
+              onClick="onItemClick"
+              multipleLine="{{true}}"
+              wrap="{{true}}"
+            >
+              <text class="name">{{item.userName}}</text>
+              <view class="brief">
+                <view class="brief-title">{{item.approvalTitle}}</view>
+                <view class="brief-content">{{item.approvalContent}}</view>
+                <image class="brief-image" src="{{item}}" a:if="{{item}}" a:for="{{item.approvalImg1}}" catchTap="preview" data-index="{{index}}" mode="widthFix" />
+                <view class="brief-time">{{item.spTime}}</view>
+              </view>
+              <view slot="extra" class="extra" a:if="{{!(item.kIntegral > 0)}}">
+              +{{item.sqIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
+              </view>
+              <view slot="extra" class="extra" a:else>
+              -{{item.kIntegral}}    {{item.integralTypeId == '1' ? '品德分' : (item.integralTypeId == '2' ? '业绩分' : (item.integralTypeId == '3' ? '行为分' : (item.integralTypeId == '4' ? '奖扣分' : (item.integralTypeId == '5' ? '奖励分' : (item.integralTypeId == '6' ? '点赞分' : (item.integralTypeId == '7' ? '任务分' : '行为分'))))))}}
+              </view>
+            </list-item>
+          </block> 
+        </list>
+      </view>
+      <view a:else class="list-none">暂无数据</view>
+      <view a:if="{{!hasNextPage}}" class="noMoreDataTxt">无更多数据</view>
+    </scroll-view>
 </view>

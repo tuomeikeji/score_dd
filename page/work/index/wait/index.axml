@@ -1,6 +1,6 @@
 <view class="page">
   <view class="tabs">
-    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange">
+    <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange" data-index="{{index}}" key="tabs-item-{{index}}" current="{{current}}">
     </tabs>
   </view>
   <view class="search-filter">
@@ -15,12 +15,12 @@
   </view>
   <!-- style="height: {{winH}}px;" -->
   <scroll-view  class="scroll" scroll-y="{{true}}" onScrollToLower="loadMoreData" style="height:{{winH}}px;">
-    <view>
+    <view a:if="{{hasInitData}}">
       <list className="list">
-        <block a:for="{{dataArray}}" a:for-item="articles" a:for-index="dataArrayIndex" class="list-block">
+        
           <block a:for="{{articles}}" a:for-item="item" a:for-index="index" class="list-block">
-            <list-item className="list-item" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}" onClick="onItemClick" multipleLine="{{true}}" wrap="{{true}}">
-              <text class="name">{{item.userName}}        
+            <list-item className="list-item" onClick="onItemClick" key="item-{{index}}" index="{{index}}" last="{{index === (items.length - 1)}}" thumb="{{item.userImg ? item.userImg : '/image/logo.png'}}" arrow="{{false}}" align="{{item.align}}"  multipleLine="{{true}}" wrap="{{true}}">
+              <text class="name">{{item.userName}}    
               </text>
               <view class="brief">
                 <view class="brief-title">            {{item.approvalTitle}}          
@@ -36,10 +36,10 @@
               </view>
             </list-item>
           </block> 
-        </block> 
+        
       </list>
     </view>
-    <view a:if="{{noData}}" class="noDataTxt">暂无数据</view>
+    <view a:else class="list-none">暂无数据</view>
     <view a:if="{{!hasNextPage}}" class="noMoreDataTxt">无更多数据</view>
   </scroll-view>
 </view>

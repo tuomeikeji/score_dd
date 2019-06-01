@@ -194,8 +194,8 @@ Page({
         dd.navigateTo({ url: '../callto/index' })
         break;
       case '水平考核':
-        // dd.navigateTo({ url: '../levelTest/index' })
-        dd.navigateTo({ url: '../luckyDraw/index' })
+        dd.navigateTo({ url: '../levelTest/index' })
+        // dd.navigateTo({ url: '../luckyDraw/index' })
         break;
     }
   },
